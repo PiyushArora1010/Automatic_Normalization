@@ -481,6 +481,13 @@ data = database(attr, input_fd)
 
 data.summary()
 
-data.convert_to_bcnf()
+form = input("Enter the normal form to convert to: ")
+
+if form == "2NF":
+    data.convert_to_2nf()
+elif form == "3NF":
+    data.convert_to_3nf()
+elif form == "BCNF":
+    data.convert_to_bcnf()
 
 data.recursive_print_children()
